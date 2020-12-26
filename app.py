@@ -20,6 +20,7 @@ machine = TocMachine(
             "trigger": "advance",
             "source": "user",
             "dest": "help",
+            "conditions": "is_going_back"
         },
         {"trigger": "advance", "source": ["help"], "dest": "help", "conditions": "is_going_back"}
     ],
