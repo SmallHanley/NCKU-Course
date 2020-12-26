@@ -7,6 +7,9 @@ class TocMachine(GraphMachine):
     def __init__(self, **machine_configs):
         self.machine = GraphMachine(model=self, **machine_configs)
 
+    def is_going_to_hello(self, event):
+        return true
+
     def is_going_to_state1(self, event):
         text = event.message.text
         return text.lower() == "go to state1"
@@ -15,8 +18,8 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "go to state2"
 
-    def on_enter_options(silf, event):
-        replay_message = "歡迎使用 NCKU Course App"
+    def on_enter_hello(silf, event):
+        replay_message = "歡迎使用 NCKU Course App!!!"
         reply_token = event.reply_token
         send_text_message(reply_token, replay_message)
 
@@ -24,7 +27,6 @@ class TocMachine(GraphMachine):
         replay_message = "help"
         reply_token = event.reply_token
         send_text_message(reply_token, replay_message)
-        self.go_back()
 
     def on_enter_state1(self, event):
         print("I'm entering state1")
