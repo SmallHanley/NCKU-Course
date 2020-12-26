@@ -19,6 +19,11 @@ class TocMachine(GraphMachine):
         replay_message = "歡迎使用 NCKU Course App"
         reply_token = event.reply_token
         send_text_message(reply_token, replay_message)
+
+    def on_enter_options(silf, event):
+        replay_message = "help"
+        reply_token = event.reply_token
+        send_text_message(reply_token, replay_message)
         self.go_back()
 
     def on_enter_state1(self, event):
