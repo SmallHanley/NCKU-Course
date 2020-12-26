@@ -20,9 +20,9 @@ machine = TocMachine(
             "trigger": "advance",
             "source": "user",
             "dest": "help",
-            "conditions": "is_going_back"
+            "conditions": "is_going_to_help"
         },
-        {"trigger": "advance", "source": ["help"], "dest": "help", "conditions": "is_going_back"}
+        {"trigger": "advance", "source": ["help"], "dest": "help", "conditions": "is_going_to_help"}
     ],
     initial="user",
     auto_transitions=False,
