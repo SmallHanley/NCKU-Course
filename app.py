@@ -27,7 +27,7 @@ machine = TocMachine(
             "source": "hello",
             "dest": "options",
         },
-        {"trigger": "advance", "source": ["options"], "dest": "options", "conditions": "is_going_back"},
+        {"trigger": "advance", "source": ["options"], "dest": "options", "conditions": "is_going_back"}
     ],
     initial="user",
     auto_transitions=False,
