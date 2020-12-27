@@ -33,7 +33,7 @@ machine = TocMachine(
             "source": "state1_dep",
             "dest": "state1_course"
         },
-        {"trigger": "advance", "source": ["help, "state1_dep", "state1_course", "state2_dep", "state2_course", "state3_dep", "state3_course", "print""], "dest": "help", "conditions": "is_going_to_help"}
+        {"trigger": "advance", "source": ["help", "state1_dep", "state1_course", "state2_dep", "state2_course", "state3_dep", "state3_course", "print""], "dest": "help", "conditions": "is_going_to_help"}
     ],
     initial="user",
     auto_transitions=False,
