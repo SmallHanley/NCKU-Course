@@ -25,17 +25,20 @@ machine = TocMachine(
         {
             "trigger": "advance",
             "source": "help",
-            "dest": "dep"
+            "dest": "dep",
+            "conditions": "is_true"
         },
         {
             "trigger": "advance",
             "source": "dep",
-            "dest": "course"
+            "dest": "course",
+            "conditions": "is_true"
         },
         {
             "trigger": "advance",
             "source": "course",
-            "dest": "print"
+            "dest": "print",
+            "conditions": "is_true"
         },
         {"trigger": "advance", "source": ["help", "dep", "course", "print"], "dest": "help", "conditions": "is_going_to_help"}
     ],

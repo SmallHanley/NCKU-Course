@@ -15,7 +15,7 @@ class TocMachine(GraphMachine):
         return text.lower() == "help"
     
     def is_true(self, event):
-        return true
+        return True
     # def is_going_to_dep(self, event):
     #     text = event.message.text
     #     return text == "1" or text == "2" or text == "3"
