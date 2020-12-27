@@ -14,7 +14,7 @@ load_dotenv()
 
 
 machine = TocMachine(
-    states=["user", "help"],
+    states=["user", "help", "state1_dep", "state1_course", "state2_dep", "state2_course", "state3_dep", "state3_course", "print"],
     transitions=[
         {
             "trigger": "advance",
@@ -22,7 +22,18 @@ machine = TocMachine(
             "dest": "help",
             "conditions": "is_going_to_help"
         },
-        {"trigger": "advance", "source": ["help"], "dest": "help", "conditions": "is_going_to_help"}
+        {
+            "trigger": "advance",
+            "source": "help",
+            "dest": "state1_dep",
+            "conditions": "is_going_to_state1_dep"
+        },
+        {
+            "trigger": "advance",
+            "source": "state1_dep",
+            "dest": "state1_course"
+        },
+        {"trigger": "advance", "source": ["help, "state1_dep", "state1_course", "state2_dep", "state2_course", "state3_dep", "state3_course", "print""], "dest": "help", "conditions": "is_going_to_help"}
     ],
     initial="user",
     auto_transitions=False,
@@ -98,7 +109,7 @@ def webhook_handler():
         print(f"REQUEST BODY: \n{body}")
         response = machine.advance(event)
         if response == False:
-            send_text_message(event.reply_token, "歡迎使用 NCKU Course App!\n輸入\"help\"來查看功能")
+            send_text_message(event.reply_token, "歡迎使用 NCKU Course!\n輸入\"help\"來查看功能")
 
     return "OK"
 
