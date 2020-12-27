@@ -40,11 +40,11 @@ class TocMachine(GraphMachine):
     def on_enter_print(silf, event):
         self.course = event.message.text
         command_text = ""
-        if self.command == "1"
+        if self.command == "1":
             command_text = "查詢課程大綱"
-        elif self.command == "2"
+        elif self.command == "2":
             command_text = "查詢課程餘額"
-        else
+        else:
             command_text = "查詢課程教室"
         replay_message = ("command: " + command_text + "\n" +
                           "系所序號: " +  self.dep + "\n" + 
