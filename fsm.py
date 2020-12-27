@@ -20,26 +20,26 @@ class TocMachine(GraphMachine):
     #     text = event.message.text
     #     return text == "1" or text == "2" or text == "3"
 
-    def on_enter_help(silf, event):
+    def on_enter_help(self, event):
         replay_message = ("查詢課程大綱請按1\n"+
                           "查詢課程餘額請按2\n"+
                           "查詢課程教室請按3")
         reply_token = event.reply_token
         send_text_message(reply_token, replay_message)
 
-    def on_enter_dep(silf, event):
+    def on_enter_dep(self, event):
         self.command = event.message.text
         replay_message = "請輸入系所序號"
         reply_token = event.reply_token
         send_text_message(reply_token, replay_message)
 
-    def on_enter_course(silf, event):
+    def on_enter_course(self, event):
         self.dep = event.message.text
         replay_message = "請輸入系所課程"
         reply_token = event.reply_token
         send_text_message(reply_token, replay_message)
 
-    def on_enter_print(silf, event):
+    def on_enter_print(self, event):
         self.course = event.message.text
         command_text = ""
         if self.command == "1":
