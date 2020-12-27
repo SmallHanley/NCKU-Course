@@ -1,15 +1,8 @@
-# TOC Project 2020
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/dc7fa47fcd809b99d087/maintainability)](https://codeclimate.com/github/NCKU-CCS/TOC-Project-2020/maintainability)
-
-[![Known Vulnerabilities](https://snyk.io/test/github/NCKU-CCS/TOC-Project-2020/badge.svg)](https://snyk.io/test/github/NCKU-CCS/TOC-Project-2020)
-
-
-Template Code for TOC Project 2020
-
-A Line bot based on a finite state machine
-
-More details in the [Slides](https://hackmd.io/@TTW/ToC-2019-Project#) and [FAQ](https://hackmd.io/s/B1Xw7E8kN)
+# NCKU-Course
+## Description
+This is a Line bot based on a finite state machine. The App server is deployed with [Heroku](https://dashboard.heroku.com/apps). You can use the Line bot to tell you something details about [NCKU course](https://course.ncku.edu.tw/), which include course selected number, space available or not, classroom, syllabus, etc.
+![1](./img/1.png)
+![2](./img/2.png)
 
 ## Setup
 
@@ -71,7 +64,7 @@ Or You can use [servo](http://serveo.net/) to expose local servers to the intern
 
 
 ## Finite State Machine
-![fsm](./img/show-fsm.png)
+![fsm](./fsm.png)
 
 ## Usage
 The initial state is set to `user`.
@@ -147,7 +140,7 @@ sudo snap install --classic heroku
 	heroku buildpacks:add --index 1 heroku-community/apt
 	```
 
-	refference: https://hackmd.io/@ccw/B1Xw7E8kN?type=view#Q2-如何在-Heroku-使用-pygraphviz
+	reference: https://hackmd.io/@ccw/B1Xw7E8kN?type=view#Q2-如何在-Heroku-使用-pygraphviz
 
 ## Reference
 [Pipenv](https://medium.com/@chihsuan/pipenv-更簡單-更快速的-python-套件管理工具-135a47e504f4) ❤️ [@chihsuan](https://github.com/chihsuan)
