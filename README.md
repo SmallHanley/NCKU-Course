@@ -1,6 +1,7 @@
 # NCKU-Course
 ## Description
 This is a Line bot based on a finite state machine. The App server is deployed with [Heroku](https://dashboard.heroku.com/apps). You can use the Line bot to tell you something details about [NCKU course](https://course.ncku.edu.tw/), which include course selected number, space available or not, classroom, syllabus, etc.
+
 ![1](./img/1.png)
 ![2](./img/2.png)
 
