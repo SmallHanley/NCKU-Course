@@ -14,16 +14,16 @@ class TocMachine(GraphMachine):
         text = event.message.text
         return text.lower() == "help"
     
-    def is_going_to_dep(self, event):
-        text = event.message.text
-        return text == "1" or text == "2" or text == "3"
+    # def is_going_to_dep(self, event):
+    #     text = event.message.text
+    #     return text == "1" or text == "2" or text == "3"
 
-    # def on_enter_help(silf, event):
-    #     replay_message = ("查詢課程大綱請按1\n"+
-    #                       "查詢課程餘額請按2\n"+
-    #                       "查詢課程教室請按3")
-    #     reply_token = event.reply_token
-    #     send_text_message(reply_token, replay_message)
+    def on_enter_help(silf, event):
+        replay_message = ("查詢課程大綱請按1\n"+
+                          "查詢課程餘額請按2\n"+
+                          "查詢課程教室請按3")
+        reply_token = event.reply_token
+        send_text_message(reply_token, replay_message)
 
     def on_enter_dep(silf, event):
         self.command = event.message.text
