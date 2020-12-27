@@ -16,7 +16,7 @@ class TocMachine(GraphMachine):
     
     def is_going_to_state1_dep(self, event):
         text = event.message.text
-        return text == "1" or text == "2" text == "3"
+        return text == "1" or text == "2" or text == "3"
 
     def on_enter_help(silf, event):
         replay_message = ("查詢課程大綱請按1\n"+
